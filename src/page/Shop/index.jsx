@@ -12,7 +12,7 @@ const Shop = () => {
 
   async function getProduct() {
     const res = await axios.get(
-      "https://680dcc8ec47cb8074d913800.mockapi.io/products"
+      `https://680dcc8ec47cb8074d913800.mockapi.io/products`
     );
     setProduct(res.data);
   }
