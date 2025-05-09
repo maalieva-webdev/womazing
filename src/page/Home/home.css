@@ -138,8 +138,7 @@ Hero-three .hero-three {
     font-size: 14px;
   }
 }
-
-hero-four .hero-four {
+.hero-four {
   text-align: start;
   padding: 50px 0;
 }
