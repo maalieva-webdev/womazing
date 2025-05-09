@@ -1,0 +1,8 @@
+.cart {
+  width: 30%;
+  background: #cac7c77b;
+  .img-cart {
+    width: 200px;
+    height: 300px;
+  }
+}
