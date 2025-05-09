@@ -2,6 +2,7 @@
 import "./home.css";
 import NewHome from "../../component/NewHome";
 import ThreeHome from "../../component/ThreeHome";
+import CommandHome from "../../component/ComandHome/comandHome";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
           <NewHome />
           <div className="hero-two"></div>
           <ThreeHome />
-          {/* <CommandHome /> */}
+          <CommandHome />
         </div>
       </div>
     </div>
