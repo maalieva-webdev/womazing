@@ -19,7 +19,7 @@ function NewHome() {
         </p>
         <div className="one-btn">
           <img src={btn} alt="" />
-          <button>Открыть магазин</button>
+          <button>Открыть магазин </button>
         </div>
         <img className="slide" src={slide} alt="" />
       </div>
