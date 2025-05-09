@@ -54,20 +54,27 @@ a {
         text-align: end;
         width: 300px;
       }
-      .one-btn {
+      .one-btn-div {
         display: flex;
         align-items: center;
         img {
           height: 48px;
         }
-        button {
-          width: 160px;
-          height: 48px;
+        .one-btn {
           gap: 10px;
-          padding: 15px 40px;
+          padding: 16px 18px;
           color: aliceblue;
           background: #6e9c9f;
           border: none;
+          margin-left: 1px;
+        }
+        .one-btn:hover {
+          gap: 10px;
+          padding: 15px 18px;
+          color: #6e9c9f;
+          background: white;
+          border: 1px solid #6e9c9f;
+          margin-left: -1px;
         }
       }
       .slide {
@@ -107,36 +114,32 @@ a {
   }
 }
 
-.collection-h2{
+.collection-h2 {
   padding-top: 140px;
   font-size: 32px;
   font-weight: 300;
   text-align: start;
 }
-.collection-product{
+.collection-product {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 50px 0 40px 0;
 }
-.collection-btn{
+.collection-btn {
   font-size: 16px;
   padding: 15px 18px;
   background: #00000000;
-  color: #6E9C9F;
-  border: 1px solid #6E9C9F;
+  color: #6e9c9f;
+  border: 1px solid #6e9c9f;
   margin-top: 30px;
 }
-.collection-btn:hover{
-  
-  background:#6E9C9F;
+.collection-btn:hover {
+  background: #6e9c9f;
   color: black;
-  border: 1px solid #6E9C9F;
-
+  border: 1px solid #6e9c9f;
 }
-
-
 
 .hero-three {
   text-align: start;

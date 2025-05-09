@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Shop.css";
-// import axios from "axios";
+import axios from "axios";
 import text from "./img/text.svg";
 import left from "./img/left.svg";
 import ProductCard from "../../component/ProductCard";

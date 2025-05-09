@@ -4,8 +4,12 @@ import img1 from "./img/dim1.png";
 import img2 from "./img/dim3.png";
 import img3 from "./img/dim2.png";
 import btn from "./img/ikon.svg";
+import { useNavigate } from "react-router-dom";
 
 function NewHome() {
+
+  const navigate=useNavigate()
+
   return (
     <div className="hero-one">
       <div className="one-desc">
@@ -17,9 +21,9 @@ function NewHome() {
           оттенки - вот то, что вы искали в этом <br />
           сезоне. Время исследовать.
         </p>
-        <div className="one-btn">
+        <div className="one-btn-div">
           <img src={btn} alt="" />
-          <button>Открыть магазин </button>
+          <button onClick={()=>navigate('/shop')} className="one-btn">Открыть магазин </button>
         </div>
         <img className="slide" src={slide} alt="" />
       </div>
