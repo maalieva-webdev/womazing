@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./component/Header";
 import Home from "./page/Home";
 import Shop from "./page/Shop";
-// import Brend from './page/Brend'
 import Brend from "./page/Brend";
 import Contact from "./page/Contact";
 import Footer from "./component/Footer";
@@ -22,7 +21,7 @@ function App() {
         <Route path="/detal-page/:params" element={<DetalPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
