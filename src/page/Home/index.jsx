@@ -37,7 +37,10 @@ const Home = () => {
                 <ProductCard el={el} key={idx} />
               ))}
             </div>
-            <button onClick={() => navigate("/shop")} className="collection-btn">
+            <button
+              onClick={() => navigate("/shop")}
+              className="collection-btn"
+            >
               Открыть магазин
             </button>
           </div>
