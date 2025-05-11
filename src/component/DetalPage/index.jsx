@@ -35,7 +35,7 @@ const DetalPage = () => {
             <p>{el.name}</p>
           </div>
           <div className="detal-desc">
-            <img style={{ width: "50%",height:'500px' }} src={el.url} alt="" />
+            <img className="desc-img" src={el.url} alt="" />
             <div className="desc-info">
               <h4>{el.price}</h4>
               <div className="razmer">

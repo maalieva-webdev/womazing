@@ -8,6 +8,7 @@ import Contact from "./page/Contact";
 import Footer from "./component/Footer";
 import DetalPage from "./component/DetalPage";
 import NotFound from "./page/NotFound";
+import Carzina from "./component/Carzina";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/brend" element={<Brend />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/carzina" element={<Carzina />} />
         <Route path="/detal-page/:params" element={<DetalPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

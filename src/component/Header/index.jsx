@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "./img/logotip.svg";
 import phone from "./img/zvonok.svg";
 import car from "./img/karzina.svg";
 import "./Header.css";
 
 const Header = () => {
+  const navigate=useNavigate
   return (
     <div className="container">
       <div className="header">
@@ -23,7 +24,7 @@ const Header = () => {
             +7 (495) 823-54-12
           </Link>
         </div>
-        <img className="car" src={car} alt="" />
+        <img className="car" onClick={()=>navigate('/carzina')} src={car} alt="" />
       </div>
     </div>
   );

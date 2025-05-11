@@ -11,8 +11,21 @@
 .detal-desc {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: start;
+  gap: 100px;
+}
+
+.desc-img{
+    width: 50%;
+    height:500px;
+    border-radius: 8px;
+}
+.desc-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 50px;
 }
 .detal-sviz-block{
     text-align: start;
