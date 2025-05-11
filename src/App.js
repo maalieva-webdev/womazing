@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./component/Header";
 import Home from "./page/Home";
 import Shop from "./page/Shop";
-// import Brend from './page/Brend'
 import Brend from "./page/Brend";
 import Contact from "./page/Contact";
 import Footer from "./component/Footer";
@@ -18,7 +17,7 @@ function App() {
         <Route path="/brend" element={<Brend />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

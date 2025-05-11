@@ -1,0 +1,54 @@
+.glav {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.glav2 {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50xp 0;
+}
+.htar {
+  font-size: 22px;
+}
+.parag {
+  display: flex;
+
+  gap: 40px;
+
+  font-size: 17px;
+}
+
+.ideya {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  gap: 10px;
+}
+
+.Surot {
+  width: 35%;
+}
+
+.text {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-brend {
+  padding: 15px 20px;
+  font-size: 16px;
+  color: aliceblue;
+  border: 1px solid;
+  background: rgba(110, 156, 159, 1);
+}
