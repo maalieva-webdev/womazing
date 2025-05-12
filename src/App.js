@@ -8,7 +8,8 @@ import Contact from "./page/Contact";
 import Footer from "./component/Footer";
 import DetalPage from "./component/DetalPage";
 import NotFound from "./page/NotFound";
-import Carzina from "./component/Carzina";
+import Carzina from "./page/Carzina";
+import Todo from "./page/Todo";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/brend" element={<Brend />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/carzina" element={<Carzina />} />
+        <Route path="/todo" element={<Todo />} />
         <Route path="/detal-page/:params" element={<DetalPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
