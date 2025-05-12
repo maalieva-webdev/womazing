@@ -13,4 +13,16 @@
     width: 200px;
     height: 300px;
   }
+  .cart-btn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .btn{
+      padding: 10px 10px;
+      background: rgb(6, 140, 6);
+      border-radius: 6px;
+      border: none;
+      color: white;
+    }
+  }
 }

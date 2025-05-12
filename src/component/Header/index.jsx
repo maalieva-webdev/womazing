@@ -4,9 +4,17 @@ import logo from "./img/logotip.svg";
 import phone from "./img/zvonok.svg";
 import car from "./img/karzina.svg";
 import "./Header.css";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
-  const navigate=useNavigate
+  const navigate=useNavigate()
+  const [res,setRes]=React.useState([])
+
+  const count=useSelector((state)=>state)
+  // setRes(count)
+console.log(count.length);
+
   return (
     <div className="container">
       <div className="header">
@@ -16,6 +24,7 @@ const Header = () => {
           <NavLink to={"/shop"}>Магазин</NavLink>
           <NavLink to={"/brend"}>О бренде</NavLink>
           <NavLink to={"/contact"}>Контакты</NavLink>
+          <NavLink to={"/todo"}>Тодо</NavLink>
         </div>
         <div>
           <Link className="tel">
@@ -24,7 +33,10 @@ const Header = () => {
             +7 (495) 823-54-12
           </Link>
         </div>
-        <img className="car" onClick={()=>navigate('/carzina')} src={car} alt="" />
+        <div onClick={()=>navigate('/carzina')} className="block-car">
+        <img className="car"  src={car} alt="" />
+        <span style={{display:`${count.length>0 ? "block" : "none"}`}} className="span" >{count.length}</span>
+        </div>
       </div>
     </div>
   );

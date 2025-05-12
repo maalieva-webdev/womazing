@@ -1,0 +1,53 @@
+.carzina{
+text-align: start;
+}
+.title{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+.lists{
+    padding: 50px 0;
+}
+.list-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.lists-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 30px;
+    padding: 30px;
+}
+.product-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .list-group-img{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .list-btn{
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 5px 10px;
+        background: rgb(255, 251, 251);
+        color: red;
+        border: 0.5px solid gray;
+    }
+    .list-img{
+        width: 100px;
+        height: 100px;
+    }
+    .list-name{
+        font-size: 14px;
+        font-weight: 200;
+    }
+}

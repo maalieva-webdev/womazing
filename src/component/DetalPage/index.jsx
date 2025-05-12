@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "../ProductCard";
 import "./DetalPage.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addCarzina } from "../../storeTwo/action";
 
 const DetalPage = () => {
+  const dispatch=useDispatch()
   const { params } = useParams();
   const [product, setProduct] = useState([]);
   const [products, setProducts] = useState([]);
@@ -18,13 +21,13 @@ const DetalPage = () => {
     setProduct(res.data);
     setProducts(response.data);
   }
-  console.log(product);
-  console.log(products);
-  console.log(params);
+  // console.log(product);
+  // console.log(products);
+  // console.log(params);
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [params]);
 
   return (
     <div className="container">
@@ -59,7 +62,7 @@ const DetalPage = () => {
               </div>
               <div className="add-carzina">
                 <h5>1</h5>
-                <button>Добавить в корзину</button>
+                <button onClick={()=>dispatch(addCarzina(el))}>Добавить в корзину</button>
               </div>
             </div>
           </div>
