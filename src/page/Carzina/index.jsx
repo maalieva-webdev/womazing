@@ -2,20 +2,17 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Carzina.css";
 import { deleteCarzina } from "../../storeTwo/action";
+import { useNavigate } from "react-router-dom";
 
 const Carzina = () => {
+    const navigate=useNavigate()
   const product = useSelector((state) => state);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
- const res= product.reduce((acc,el)=>{
-    
-    return Math.round(acc+ Number(el.price))
-    
-  },0)
-// console.log(Math.(res));
-
-
-
+  const resPrice = product.reduce((acc, el) => {
+    return Math.round(acc + Number(el.price));
+  }, 0);
+  // console.log(Math.(res));
 
   console.log(product);
 
@@ -38,7 +35,12 @@ const Carzina = () => {
           {product.map((el, idx) => (
             <div key={idx} className="product-list">
               <div className="list-group-img">
-                <button onClick={()=>dispatch(deleteCarzina(el.id))} className="list-btn">X</button>
+                <button
+                  onClick={() => dispatch(deleteCarzina(el.id))}
+                  className="list-btn"
+                >
+                  X
+                </button>
                 <img className="list-img" src={el.url} alt="" />
               </div>
               <h4 className="list-name">{el.name}</h4>
@@ -48,9 +50,13 @@ const Carzina = () => {
             </div>
           ))}
         </div>
+        <hr />
         <div className="all-carzin">
-            <h3>Общий количества: {product.length}шт</h3>
-            <h3>Общий цены: {res}$</h3>
+          <p className="all-p">Подытог: {resPrice} $</p>
+          <div className="offormit-btns">
+            <p className="offormit-p">Итого : {resPrice} $</p>
+            <button onClick={()=>navigate('/offormizakaz')} className="offormit-btn">Оформить заказ</button>
+          </div>
         </div>
       </div>
     </div>

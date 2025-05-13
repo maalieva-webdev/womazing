@@ -10,6 +10,7 @@ import DetalPage from "./component/DetalPage";
 import NotFound from "./page/NotFound";
 import Carzina from "./page/Carzina";
 import Todo from "./page/Todo";
+import OfformiZakaz from "./component/OfformiZakaz";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/carzina" element={<Carzina />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/offormizakaz" element={<OfformiZakaz />} />
         <Route path="/detal-page/:params" element={<DetalPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

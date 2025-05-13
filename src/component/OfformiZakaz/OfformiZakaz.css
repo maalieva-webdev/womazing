@@ -1,0 +1,121 @@
+.zakaz {
+  text-align: start;
+  padding: 50px 0;
+
+  .zakaz-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    padding-left: 170px;
+    padding-bottom: 50px;
+    .zakaz-p-title {
+      font-size: 12px;
+    }
+  }
+  .zakaz-input {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+
+    .zakaz-left {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      gap: 40px;
+
+      .pokupatel {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        gap: 20px;
+
+        .pokupatel-h3 {
+          font-size: 15px;
+          font-weight: 200;
+        }
+        input {
+          border: none;
+          border-bottom: 1px solid grey;
+          outline: none;
+          font-size: 11px;
+          padding: 5px 0;
+          width: 340px;
+        }
+      }
+    }
+    .zakaz-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      gap: 50px;
+
+      .vash {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        .oplata-h3 {
+          font-size: 15px;
+          font-weight: 200;
+        }
+        .opl-group {
+          display: flex;
+          align-items: start;
+          justify-content: space-between;
+          width: 150px;
+          .opl-left,
+          .opl-right {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+          }
+        }
+        .oplata-span {
+          width: 180px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          background: #f1eadc;
+          padding: 7px 10px;
+          margin-left: -10px;
+        }
+        .oplata-p {
+          font-size: 11px;
+        }
+      }
+      .oplata {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: start;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+        .oplata-h3 {
+          font-size: 15px;
+          font-weight: 200;
+        }
+        .oplata-p {
+          font-size: 11px;
+        }
+        .oplata-btn {
+          padding: 7px 10px;
+          background: #6e9c9f;
+          border: none;
+          border-radius: 3px;
+          color: white;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
