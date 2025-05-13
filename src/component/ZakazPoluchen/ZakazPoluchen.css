@@ -1,0 +1,58 @@
+.zakaz-poluchen {
+  padding: 50px 0;
+
+  .poluchen-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    padding-left: 170px;
+    padding-bottom: 50px;
+    .poluchen-p-title {
+      font-size: 13px;
+      font-weight: 200;
+    }
+  }
+  .poluchen {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+    .poluchen-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      .poluchen-img{
+          width: 70px;
+      }
+      .poluchen-left-text {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        gap: 10px;
+        .poluchen-h5{
+          font-size: 16px;
+          font-weight: 200;
+        }
+        .poluchen-p{
+          font-size: 13px;
+          font-weight: 200;
+        }
+      }
+    }
+    .poluchen-right-btn {
+      background: #fdfafa00;
+      padding: 10px 15px;
+      border: 1px solid #6e9c9f;
+      border-radius: 3px;
+      color: #6e9c9f;
+      font-size: 12px;
+    }
+    .poluchen-right-btn:hover {
+      background: #6e9c9f;
+      color: white;
+    }
+  }
+}

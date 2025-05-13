@@ -1,7 +1,11 @@
 import React from "react";
 import "./OfformiZakaz.css";
+import { useNavigate } from "react-router-dom";
 
 const OfformiZakaz = () => {
+    const navigate=useNavigate()
+
+
   return (
     <div className="container">
       <div className="zakaz">
@@ -58,7 +62,7 @@ const OfformiZakaz = () => {
                 <input type="radio" />
                 <p className="oplata-p">Оплата картами</p>
               </li>
-              <button className="oplata-btn">Разместить заказ</button>
+              <button onClick={()=>navigate('/zakazpoluchen')} className="oplata-btn">Разместить заказ</button>
             </div>
           </div>
         </div>
