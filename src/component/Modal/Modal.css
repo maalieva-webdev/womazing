@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #6e9c9ff2;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content {
+  background: white;
+}
+.modal-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+.modal-zvonok {
+  padding: 7px 10px;
+  background: #6e9c9f;
+  border: 1px solid #6e9c9f;
+  border-radius: 3px;
+  color: white;
+  font-size: 12px;
+}
+.modal-zvonok:hover {
+  background: white;
+  color: #6e9c9f;
+}
+.modal-input {
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  font-size: 11px;
+  padding: 5px 0;
+  width: 250px;
+}
+.modal-h1{
+    font-size: 18px;
+    font-weight: 200;
+}
