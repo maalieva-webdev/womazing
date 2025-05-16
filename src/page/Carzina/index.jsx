@@ -1,16 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Carzina.css";
-import { deleteCarzina } from "../../storeTwo/action";
+import { changeQuentity, deleteCarzina } from "../../storeTwo/action";
 import { useNavigate } from "react-router-dom";
 
 const Carzina = () => {
     const navigate=useNavigate()
   const product = useSelector((state) => state);
   const dispatch = useDispatch();
+  const [kol,setKol]=React.useState([])
 
   const resPrice = product.reduce((acc, el) => {
-    return Math.round(acc + Number(el.price));
+    return Math.round(acc + Number(el.price*el.quentity));
   }, 0);
   // console.log(Math.(res));
 
@@ -40,13 +41,14 @@ const Carzina = () => {
                   className="list-btn"
                 >
                   X
-                </button>
+                </button> 
                 <img className="list-img" src={el.url} alt="" />
               </div>
               <h4 className="list-name">{el.name}</h4>
-              <h4 className="list-name">{el.price}</h4>
-              <h4 className="list-name">1</h4>
-              <h4 className="list-name">19</h4>
+              <h4 className="list-name">{Math.round(el.price*el.quentity)}</h4>
+              <input className="list-name quentity" type="number" min={1} max={el.maxquentity} defaultValue={el.quentity} onChange={(e)=>dispatch(changeQuentity(e.target.value,el.id))} />
+              {/* <h4 className="list-name">1</h4> */}
+              <h4 className="list-name">{el.maxquentity}шт</h4>
             </div>
           ))}
         </div>

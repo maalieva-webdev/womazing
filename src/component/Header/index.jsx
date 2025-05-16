@@ -15,7 +15,7 @@ const Header = () => {
 
   const count = useSelector((state) => state);
   // setRes(count)
-  console.log(count.length);
+  // console.log(count.length);
   function closeModal() {
     setOpenModal(!openModal);
     setNextModal(!nextModal);

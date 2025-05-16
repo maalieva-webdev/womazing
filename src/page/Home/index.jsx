@@ -18,7 +18,7 @@ const Home = () => {
     );
     setProduct(res.data);
   }
-  console.log(product);
+  // console.log(product);
 
   useEffect(() => {
     getProduct();
