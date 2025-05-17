@@ -11,3 +11,6 @@ export const changeQuentity=(value,id)=>({
     type:'CHANGE_QUENTITY',
     payload: {value,id}
 })
+export const clearCarzina=()=>({
+    type:'CLEAR_CARZINA'
+})

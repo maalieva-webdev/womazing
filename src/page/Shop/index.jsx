@@ -18,6 +18,15 @@ const Shop = () => {
   }
   console.log(product);
 
+  async function fillterCatigories(a, b) {
+    const fill = await axios.get(
+      `https://680dcc8ec47cb8074d913800.mockapi.io/products`
+    );
+   let res= fill.data
+   let v=res.filter((el) => el.categories > a && el.categories < b);
+    setProduct(v);
+  }
+
   useEffect(() => {
     getProduct();
   }, []);
@@ -31,11 +40,36 @@ const Shop = () => {
         </div>
         <div className="category">
           <div className="category-btns">
-            <button className="category-btn">Все</button>
-            <button className="category-btn">Пальто</button>
-            <button className="category-btn">Свитшоты</button>
-            <button className="category-btn">Кардиганы</button>
-            <button className="category-btn">Толстовки</button>
+            <button
+              onClick={() => fillterCatigories(0,100)}
+              className="category-btn"
+            >
+              Все
+            </button>
+            <button
+              onClick={() => fillterCatigories(0, 26)}
+              className="category-btn"
+            >
+              Пальто
+            </button>
+            <button
+              onClick={() => fillterCatigories(25, 51)}
+              className="category-btn"
+            >
+              Свитшоты
+            </button>
+            <button
+              onClick={() => fillterCatigories(50, 76)}
+              className="category-btn"
+            >
+              Кардиганы
+            </button>
+            <button
+              onClick={() => fillterCatigories(75, 100)}
+              className="category-btn"
+            >
+              Толстовки
+            </button>
           </div>
           <p className="category-p">Показано: 9 из 12 товаров</p>
         </div>

@@ -11,7 +11,7 @@ const Carzina = () => {
   const [kol,setKol]=React.useState([])
 
   const resPrice = product.reduce((acc, el) => {
-    return Math.round(acc + Number(el.price*el.quentity));
+    return Math.round(acc +(el.price*el.quentity));
   }, 0);
   // console.log(Math.(res));
 
@@ -46,8 +46,7 @@ const Carzina = () => {
               </div>
               <h4 className="list-name">{el.name}</h4>
               <h4 className="list-name">{Math.round(el.price*el.quentity)}</h4>
-              <input className="list-name quentity" type="number" min={1} max={el.maxquentity} defaultValue={el.quentity} onChange={(e)=>dispatch(changeQuentity(e.target.value,el.id))} />
-              {/* <h4 className="list-name">1</h4> */}
+              <input className="list-name quentity" type="number" min={1} max={el.maxquentity} defaultValue={el.quentity} onChange={(e)=>dispatch(changeQuentity(+e.target.value,el.id))} />
               <h4 className="list-name">{el.maxquentity}шт</h4>
             </div>
           ))}
