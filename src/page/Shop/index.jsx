@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import axios from "axios";
 import text from "./img/text.svg";
@@ -26,6 +26,25 @@ const Shop = () => {
    let v=res.filter((el) => el.categories > a && el.categories < b);
     setProduct(v);
   }
+
+  const allProduct=product.length
+  const quenProdPage=6
+  const allPage=Math.ceil(allProduct/quenProdPage)
+  const [activePage,setActivePage]=useState(1)
+  const startPro=(quenProdPage*activePage)-quenProdPage
+  const endPro=quenProdPage*activePage
+  // const activeProduct=(activePage*quenProdPage)-3
+  const newProduct=product.slice(startPro,endPro)
+
+console.log(newProduct);
+console.log("активный пейж",activePage);
+   let arr =[...new Array(allPage)]
+   console.log(arr);
+   
+
+
+
+
 
   useEffect(() => {
     getProduct();
@@ -71,22 +90,30 @@ const Shop = () => {
               Толстовки
             </button>
           </div>
-          <p className="category-p">Показано: 9 из 12 товаров</p>
+          <p className="category-p">Показано: {quenProdPage} из {allProduct} товаров</p>
         </div>
         <div className="shop">
-          {product.map((el, idx) => (
+          {newProduct.map((el, idx) => (
             <ProductCard el={el} key={idx} />
           ))}
         </div>
         <div className="category-P">
-          <p className="category-p">Показано: 9 из 12 товаров</p>
+          <p className="category-p">Показано: {quenProdPage} из {allProduct} товаров</p>
         </div>
-        <div className="btn-page">
-          <button>1</button>
-          <button>2</button>
-          <button>
-            <img src={left} alt="" />
+        <div className="btns-page">
+           <button disabled={1===activePage} onClick={()=>setActivePage(activePage-1)}>
+            <img style={{rotate:'180deg'}} src={left} alt="" />
           </button>
+          {arr.map((_,idx)=>(
+            <button style={{background:`${activePage===idx+1?'green':''}`,color:`${activePage===idx+1?'white':''}`}} className="btn-page" onClick={()=>setActivePage(idx+1)}>{idx+1}</button>
+            // <button style={{background:`${activePage===idx?'green':''}`}} className="btn-page" onClick={()=>setActivePage(+activePage+(idx+1))}>{}</button>
+          ))}
+          {/* <button>1</button>
+          <button>2</button> */}
+          <button disabled={allPage===activePage} onClick={()=>setActivePage(activePage+1)}>
+            <img  src={left} alt="" />
+          </button>
+
         </div>
       </div>
     </div>

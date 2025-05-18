@@ -21,14 +21,20 @@ const carzinaReducer = (state = initialState, action) => {
   let obj;
   switch (action.type) {
     case "ADD_CARZINA":
-      let quen = state.find((el) => el.id === action.payload.id);
+      let quen = state.find((el) => el.id === action.payload.val.id);
       if (quen !== undefined) {
         obj = state.map((el, idx) =>
+          
           // idx === quen ? { ...el, quentity: el.quentity + 1 } : el
-          el.id === quen.id ? { ...el, quentity: el.quentity + 1 } : el
+          el.id === quen.id ? { ...el, quentity: action.payload.valQuen } : el
+          
         );
+        console.log('1 иштеди');
+
       } else {
-        obj = [...state, { ...action.payload, quentity: 1 }];
+        console.log('2 иштеди');
+        
+        obj = [...state, { ...action.payload.val, quentity: action.payload.valQuen }];
       }
       break;
     case "DELETE_CARZINA":

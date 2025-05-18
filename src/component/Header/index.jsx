@@ -13,13 +13,19 @@ const Header = () => {
   const [openModal, setOpenModal] = useState(false);
   const [nextModal, setNextModal] = useState(false);
 
-  const count = useSelector((state) => state);
+  const count = useSelector((state) => state.carzinaReducer);
   // setRes(count)
   // console.log(count.length);
   function closeModal() {
     setOpenModal(!openModal);
     setNextModal(!nextModal);
   }
+
+  function hahdleSubmit(e){
+    e.preventDefault()
+setNextModal(!nextModal)
+  }
+
 
   return (
     <div className="container">
@@ -58,19 +64,19 @@ const Header = () => {
             </button>
           </div>
         ) : (
-          <div className="modal-group">
+          <form onSubmit={hahdleSubmit} className="modal-group">
             <h3 onClick={() => setOpenModal()}>X</h3>
             <h1 className="modal-h1">Заказать обратный звонок</h1>
             <input required className="modal-input" placeholder="Имя" type="text" />
-            <input className="modal-input" placeholder="E-mail" type="text" />
-            <input className="modal-input" placeholder="Телефон" type="text" />
-            <button
-              onClick={() => setNextModal(!nextModal)}
+            <input required className="modal-input" placeholder="E-mail" type="text" />
+            <input required className="modal-input" placeholder="Телефон" type="text" />
+            <button type="submit"
+              
               className="modal-zvonok"
             >
               Заказать звонок
             </button>
-          </div>
+          </form>
         )}
       </Modal>
     </div>

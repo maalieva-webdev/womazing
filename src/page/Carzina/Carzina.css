@@ -14,7 +14,8 @@ text-align: start;
 .list-name{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 30px;
 
 }
 .lists-product{
@@ -87,4 +88,11 @@ text-align: start;
         }
 
     }
+}
+.notImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -100px;
 }

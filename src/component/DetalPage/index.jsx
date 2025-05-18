@@ -4,9 +4,13 @@ import { useParams } from "react-router-dom";
 import ProductCard from "../ProductCard";
 import "./DetalPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addCarzina } from "../../storeTwo/action";
+import { addCarzina, changeQuentity } from "../../storeTwo/action";
 
 const DetalPage = () => {
+  const [quen,setQuen]=useState(1)
+  const [color,setColor]=useState(1)
+  const [raz,setRaz]=useState(1)
+  const lsProduct=useSelector((state)=>state.carzinaReducer)
   const dispatch=useDispatch()
   const { params } = useParams();
   const [product, setProduct] = useState([]);
@@ -25,9 +29,19 @@ const DetalPage = () => {
   // console.log(products);
   // console.log(params);
 
+
+  function dispatchFunc(el){
+    dispatch(changeQuentity(quen,el.id))
+    dispatch(addCarzina(el,quen))
+  }
+
+
+
+
   useEffect(() => {
     getProduct();
   }, [params]);
+console.log(lsProduct);
 
   return (
     <div className="container">
@@ -40,29 +54,30 @@ const DetalPage = () => {
           <div className="detal-desc">
             <img className="desc-img" src={el.url} alt="" />
             <div className="desc-info">
-              <h4>{el.price}</h4>
+              <h4 className="info-price">$ {el.price}</h4>
               <div className="razmer">
-                <p>Выберите размер</p>
+                <p className="razmer-info">Выберите размер</p>
                 <div className="razmer-btn">
-                  <button>S</button>
-                  <button>M</button>
-                  <button>L</button>
-                  <button>XL</button>
-                  <button>2XL</button>
+                  <button style={{background:`${raz===1 ? 'black' : ''}`,color:`${raz===1 ? 'white' : ''}`}} onClick={()=>setRaz(1)} className="razmer-m">S</button>
+                  <button style={{background:`${raz===2 ? 'black' : ''}`,color:`${raz===2 ? 'white' : ''}`}} onClick={()=>setRaz(2)} className="razmer-m">M</button>
+                  <button style={{background:`${raz===3 ? 'black' : ''}`,color:`${raz===3 ? 'white' : ''}`}} onClick={()=>setRaz(3)} className="razmer-m">L</button>
+                  <button style={{background:`${raz===4 ? 'black' : ''}`,color:`${raz===4 ? 'white' : ''}`}} onClick={()=>setRaz(4)} className="razmer-m">XL</button>
+                  <button style={{background:`${raz===5 ? 'black' : ''}`,color:`${raz===5 ? 'white' : ''}`}} onClick={()=>setRaz(5)} className="razmer-m">2XL</button>
                 </div>
               </div>
               <div className="color">
-                <p>Выберите цвет</p>
+                <p className="razmer-info">Выберите цвет</p>
                 <div className="color-btn">
-                  <button>red</button>
-                  <button>red</button>
-                  <button>red</button>
-                  <button>red</button>
+                  <button style={{border:`${color===1 ? '4px solid black' : ''}`}} onClick={()=>setColor(1)} className="color-m r"></button>
+                  <button style={{border:`${color===2 ? '4px solid black' : ''}`}} onClick={()=>setColor(2)} className="color-m g"></button>
+                  <button style={{border:`${color===3 ? '4px solid black' : ''}`}} onClick={()=>setColor(3)} className="color-m b"></button>
+                  <button style={{border:`${color===4 ? '4px solid black' : ''}`}} onClick={()=>setColor(4)} className="color-m y" ></button>
+                  <button style={{border:`${color===5 ? '4px solid black' : ''}`}} onClick={()=>setColor(5)} className="color-m e" ></button>
                 </div>
               </div>
               <div className="add-carzina">
-                <h5>1</h5>
-                <button onClick={()=>dispatch(addCarzina(el))}>Добавить в корзину</button>
+                <input className="det-quen"  type="number" placeholder="1шт" onChange={(e)=>setQuen(e.target.value)} />
+                <button className="det-add" onClick={()=>dispatchFunc(el)}>Добавить в корзину</button>
               </div>
             </div>
           </div>

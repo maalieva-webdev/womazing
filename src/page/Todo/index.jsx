@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteTodo, toggleTodo, addTodo } from "../../store/action";
 
 const Todo = () => {
-  const todos = useSelector((state) => state);
+  const todos = useSelector((state) => state.todoReducer);
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
 

@@ -2,9 +2,10 @@ import React from "react";
 import "./OfformiZakaz.css";
 import { useNavigate } from "react-router-dom";
 import { clearCarzina } from "../../storeTwo/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const OfformiZakaz = () => {
+  const product=useSelector((state)=>state.carzinaReducer)
     const navigate=useNavigate()
     const dispatch=useDispatch()
 
@@ -13,6 +14,12 @@ const OfformiZakaz = () => {
       dispatch(clearCarzina())
       navigate('/zakazpoluchen')
     }
+console.log(product);
+const resPrice=product.reduce((acc,el)=>{
+  return Math.round(acc+(el.price*el.quentity))
+},0)
+console.log(resPrice);
+
 
   return (
     <div className="container">
@@ -48,28 +55,32 @@ const OfformiZakaz = () => {
               <div className="opl-group">
                 <div className="opl-left">
                   <p className="oplata-p">Товар</p>
-                  <p className="oplata-p">Футболка USA</p>
-                  <p className="oplata-p">Подытог</p>
+                  {product.map((el,idx)=>(
+                    <p className="oplata-p">{idx+1}. {el.name.slice(0,15)}</p>
+                  ))}
+             
                 </div>
                 <div className="opl-right">
                   <p className="oplata-p">Всего</p>
-                  <p className="oplata-p">$129</p>
-                  <p className="oplata-p">$129</p>
+                  {product.map((el,idx)=>(
+                    <p className="oplata-p">{el.quentity} шт</p>
+                  ))}
+                
                 </div>
               </div>
-                  <p className="oplata-span">Итого<span>$129</span></p>
+                  <p className="oplata-span">Итого<span>$ {resPrice}</span></p>
 
             </div>
             <div className="oplata">
               <h3 className="oplata-h3">Способы оплаты</h3>
-              <li>
-                <input required type="radio" />
+              <label>
+                <input required type="radio"  name="gender" />
                 <p className="oplata-p">Оплата наличными</p>
-              </li>
-              <li>
-                <input required type="radio" />
-                <p className="oplata-p">Оплата картами</p>
-              </li>
+              </label>
+              <label>
+                <input type="radio" />
+                <p className="oplata-p"  name="gender">Оплата картами</p>
+              </label>
               <button type="submit"  className="oplata-btn">Разместить заказ</button>
             </div>
           </div>

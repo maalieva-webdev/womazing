@@ -1,7 +1,14 @@
-import { createStore } from "redux"
+import { combineReducers, createStore } from "redux"
 // import todoReducer from "./reducer"
 import carzinaReducer from "../storeTwo/reducer"
+import todoReducer from "./reducer"
 
-const store = createStore(carzinaReducer)
+
+const rootReduser=combineReducers({
+    todoReducer,
+    carzinaReducer
+})
+
+const store = createStore(rootReduser)
 
 export default store

@@ -13,31 +13,108 @@
   align-items: center;
   justify-content: start;
   gap: 100px;
+  text-align: start;
 }
 
-.desc-img{
-    width: 50%;
-    height:500px;
-    border-radius: 8px;
+.desc-img {
+  width: 50%;
+  height: 500px;
+  border-radius: 8px;
 }
-.desc-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    gap: 50px;
+.desc-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 50px;
 }
-.detal-sviz-block{
-    text-align: start;
-    padding: 100px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.info-price {
+  color: #998e78;
+  font-size: 20px;
+  font-weight: 200;
 }
-.detal-sviz{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+.razmer-info {
+  font-size: 15px;
+}
+.razmer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+}
+.razmer-m {
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  background: rgba(128, 128, 128, 0.5);
+}
+.color-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+}
+.color-m{
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.r{
+  background: rgb(249, 104, 104);
+}
+.g{
+  background: greenyellow;
+}
+.b{
+  background: palevioletred;
+}
+.y{
+  background: rgb(88, 76, 242);
+}
+.e{
+  background: rgb(240, 44, 240);
+}
+.add-carzina{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.det-quen{
+  width: 50px;
+  height: 40px;
+  outline: none;
+}
+.det-add{
+  font-size: 16px;
+  padding: 10px 13px;
+  background: #00000000;
+  color: #6e9c9f;
+  border: 1px solid #6e9c9f;
+  /* margin-top: 30px; */
+}
+.det-add:hover {
+  background: #6e9c9f;
+  color: white;
+  border: 1px solid #6e9c9f;
+}
+.detal-sviz-block {
+  text-align: start;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.detal-sviz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }

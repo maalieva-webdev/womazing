@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Carzina.css";
 import { changeQuentity, deleteCarzina } from "../../storeTwo/action";
 import { useNavigate } from "react-router-dom";
+import img from './img/no-data-found.png'
 
 const Carzina = () => {
     const navigate=useNavigate()
-  const product = useSelector((state) => state);
+  const product = useSelector((state) => state.carzinaReducer);
   const dispatch = useDispatch();
   const [kol,setKol]=React.useState([])
 
@@ -23,6 +24,7 @@ const Carzina = () => {
         <h1>Корзина</h1>
         <p>Главная - Корзина</p>
       </div>
+      {product.length>0  ? 
       <div className="lists">
         <div className="list-name">
           <h4>Товар</h4>
@@ -42,7 +44,7 @@ const Carzina = () => {
                 >
                   X
                 </button> 
-                <img className="list-img" src={el.url} alt="" />
+                <img onClick={()=>navigate(`/detal-page/${el.id}`)} className="list-img" src={el.url} alt="" />
               </div>
               <h4 className="list-name">{el.name}</h4>
               <h4 className="list-name">{Math.round(el.price*el.quentity)}</h4>
@@ -59,7 +61,7 @@ const Carzina = () => {
             <button onClick={()=>navigate('/offormizakaz')} className="offormit-btn">Оформить заказ</button>
           </div>
         </div>
-      </div>
+      </div> : <div className="notImg"><img src={img} alt="" /></div> }
     </div>
   );
 };

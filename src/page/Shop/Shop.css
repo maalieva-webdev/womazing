@@ -58,8 +58,15 @@
     padding: 40px 0;
   }
 }
-.btn-page{
+.btns-page{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
+  .btn-page{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey ;
+    
+  }
 }

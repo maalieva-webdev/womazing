@@ -1,7 +1,7 @@
 
-export const addCarzina=(val)=>({
+export const addCarzina=(val,valQuen)=>({
     type:'ADD_CARZINA',
-    payload: val,
+    payload: {val,valQuen}
 })
 export const deleteCarzina=(id)=>({
     type:'DELETE_CARZINA',

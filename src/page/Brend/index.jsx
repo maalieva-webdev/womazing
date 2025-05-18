@@ -2,10 +2,12 @@ import React from "react";
 import Surot from "./img/Surot.png";
 import Surot2 from "./img/Surot2.png";
 import "./brend.css";
+import { useNavigate } from "react-router-dom";
 
 const Brend = () => {
+  const navigate = useNavigate()
   return (
-    <div className="glav">
+    <div className="glav container">
       <div className="glav2">
         <h1 className="htar">О бренде</h1>
         <p className="parag">Главная — О бренде</p>
@@ -47,7 +49,7 @@ const Brend = () => {
         </div>
         <img className="Surot" src={Surot2} alt="" />
       </div>
-      <button className="btn-brend">Перейти в магазин</button>
+      <button onClick={()=>navigate('/shop')} className="btn-brend">Перейти в магазин</button>
     </div>
   );
 };
